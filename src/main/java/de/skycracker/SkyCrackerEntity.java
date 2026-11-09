@@ -188,7 +188,7 @@ public class SkyCrackerEntity extends PathfinderMob {
 
     // ---- Hilfsfunktionen für die Befehle ----
 
-    public static List<SkyCrackerEntity> all(ServerLevel level) {
+      public static List<? extends SkyCrackerEntity> all(ServerLevel level) {
         return level.getEntities(SkyCrackerMod.SKYCRACKER, e -> true);
     }
 
@@ -197,7 +197,7 @@ public class SkyCrackerEntity extends PathfinderMob {
     }
 
     public static int removeAll(ServerLevel level) {
-        List<SkyCrackerEntity> list = all(level);
+               List<? extends SkyCrackerEntity> list = all(level);
         for (SkyCrackerEntity e : list) {
             e.discard();
         }
